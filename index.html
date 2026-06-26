@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق التنظيم اليومي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 تطبيق التنظيم اليومي</h1>
+            <p id="today-date"></p>
+        </header>
+
+        <div class="controls">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="أضف مهمة جديدة..." maxlength="100">
+                <select id="category-select">
+                    <option value="عام">عام</option>
+                    <option value="عمل">عمل</option>
+                    <option value="شخصي">شخصي</option>
+                    <option value="صحة">صحة</option>
+                    <option value="دراسة">دراسة</option>
+                </select>
+                <input type="time" id="task-time">
+                <button id="add-btn" class="btn-add">➕ إضافة</button>
+            </div>
+
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="عام">عام</button>
+                <button class="filter-btn" data-filter="عمل">عمل</button>
+                <button class="filter-btn" data-filter="شخصي">شخصي</button>
+                <button class="filter-btn" data-filter="صحة">صحة</button>
+                <button class="filter-btn" data-filter="دراسة">دراسة</button>
+                <button class="filter-btn" data-filter="completed">✓ مكتملة</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span class="stat-label">المهام الكلية</span>
+                <span class="stat-value" id="total-tasks">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">المكتملة</span>
+                <span class="stat-value completed" id="completed-tasks">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">المتبقية</span>
+                <span class="stat-value pending" id="pending-tasks">0</span>
+            </div>
+        </div>
+
+        <main id="tasks-container" class="tasks-container">
+            <!-- المهام تظهر هنا -->
+        </main>
+
+        <footer>
+            <button id="clear-completed" class="btn-clear">🗑️ حذف المكتملة</button>
+            <button id="export-btn" class="btn-export">📥 تصدير</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
